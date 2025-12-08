@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "SoundCloud Default Sort",
+  "version": "1.0.0",
+  "description": "Automatically select your preferred sort option on SoundCloud track pages",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://soundcloud.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://soundcloud.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+

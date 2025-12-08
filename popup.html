@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundCloud Default Sort</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SoundCloud Default Sort</h1>
+    <p class="description">Select your preferred default sort option for track pages</p>
+    
+    <div class="form-group">
+      <label for="sortOption">Default Sort Option:</label>
+      <select id="sortOption">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+        <option value="track-timestamp">Track Time</option>
+      </select>
+    </div>
+    
+    <div class="status" id="status"></div>
+    
+    <button id="saveBtn" class="save-btn">Save Preference</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
+
