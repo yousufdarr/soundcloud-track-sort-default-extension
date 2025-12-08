@@ -1,4 +1,4 @@
-# SoundCloud Default Sort Chrome Extension
+# Soundcloud Track Sort Default Chrome Extension
 
 A Chrome extension that automatically selects your preferred sort option on SoundCloud track pages.
 

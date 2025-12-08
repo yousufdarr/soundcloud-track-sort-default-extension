@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "SoundCloud Default Sort",
+  "name": "Soundcloud Track Sort Default",
   "version": "1.0.0",
   "description": "Automatically select your preferred sort option on SoundCloud track pages",
   "permissions": [
