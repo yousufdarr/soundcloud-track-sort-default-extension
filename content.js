@@ -2,6 +2,7 @@
   'use strict';
 
   let hasApplied = false;
+  let lastUrl = location.href;
 
   function applySortOption(sortValue) {
     if (hasApplied) {
@@ -47,11 +48,36 @@
     });
   }
 
+  // Check for URL changes
+  function checkUrlChange() {
+    const currentUrl = location.href;
+    if (currentUrl !== lastUrl) {
+      lastUrl = currentUrl;
+      hasApplied = false; // Reset for the new page
+      init();
+    }
+  }
+
   // Run on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
+
+  // Monitor for URL changes (SPA navigation)
+  // detailed polling to catch all navigation events
+  setInterval(checkUrlChange, 1000);
+  
+  // Also watch for DOM mutations which might indicate navigation
+  const observer = new MutationObserver(() => {
+    checkUrlChange();
+  });
+  
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
 })();
 
